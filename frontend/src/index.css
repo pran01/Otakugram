@@ -1,13 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "BushidoRegular";
+  src: local("BushidoRegular"),
+    url("./assets/fonts/Bushido/bushido-regular.ttf") format("truetype");
+  font-weight: regular;
+}
+@font-face {
+  font-family: "BushidoShadow";
+  src: local("BushidoShadow"),
+    url("./assets/fonts/Bushido/bushido-shadow.ttf") format("truetype");
+  font-weight: regular;
+}
+@font-face {
+  font-family: "AnimeAce";
+  src: local("AnimeAce"),
+    url("./assets/fonts/AnimeAce/anime-ace-regular.ttf") format("truetype");
+  font-weight: regular;
+}
+@font-face {
+  font-family: "Cartoonist";
+  src: local("Cartoonist"),
+    url("./assets/fonts/Cartoonist/Cartoonist-regular.ttf") format("truetype");
+  font-weight: regular;
+}
+@font-face {
+  font-family: "GosmickSans";
+  src: local("GosmickSans"),
+    url("./assets/fonts/GosmickSans/GosmickSans.ttf") format("truetype");
+  font-weight: regular;
+}
+@font-face {
+  font-family: "Inika";
+  src: local("Inika"),
+    url("./assets/fonts/Inika/Inika-Regular.ttf") format("truetype");
+  font-weight: regular;
+}
+@font-face {
+  font-family: "Komika";
+  src: local("Komika"),
+    url("./assets/fonts/Komika/Komika.ttf") format("truetype");
+  font-weight: regular;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+button {
+  cursor: pointer;
+}
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

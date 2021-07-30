@@ -3,6 +3,13 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import "./assets/fonts/Bushido/bushido-shadow.ttf";
+import "./assets/fonts/Bushido/bushido-regular.ttf";
+import "./assets/fonts/AnimeAce/anime-ace-regular.ttf";
+import "./assets/fonts/Cartoonist/Cartoonist-regular.ttf";
+import "./assets/fonts/GosmickSans/GosmickSans.ttf";
+import "./assets/fonts/Inika/Inika-Regular.ttf";
+import "./assets/fonts/Komika/Komika.ttf";
 
 ReactDOM.render(
   <React.StrictMode>
