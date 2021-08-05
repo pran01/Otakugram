@@ -5,23 +5,29 @@ from otakugram.models import Users
 from flask_login import current_user,login_user,logout_user
 from werkzeug.security import generate_password_hash,check_password_hash
 
-@app.route("/api/get-users",methods=["GET"])
-def getusers():
-    if current_user.is_authenticated:
-        return current_user.username,200
-    users=Users.objects()
-    users_json={"users":[]}
-    for user in users:
-        users_json["users"].append(user.to_json())
-    return jsonify(users_json)
+@app.route("/api/check-username/<username>",methods=["GET"])
+def checkusername(username):
+    try:
+        user=Users.objects(username=username).get()
+        if user:
+            return "username exists",400
+    except DoesNotExist:
+        return "username does not exist",200
 
 
 @app.route("/api/register-user",methods=["POST"])
 def registeruser():
     user_json=request.get_json()
-    user=Users(name=user_json["name"],username=user_json["username"],email=user_json["email"],password=generate_password_hash(user_json["password"]))
-    user.save()
-    return "User Added",201
+    useremail=Users.objects(email=user_json["email"]).first()
+    userusername=Users.objects(username=user_json["username"]).first()
+    if useremail:
+        return "Email Already Registered",400
+    elif userusername:
+        return "Username Already Taken",400
+    else:
+        user=Users(name=user_json["name"],username=user_json["username"],email=user_json["email"],password=generate_password_hash(user_json["password"]))
+        user.save()
+        return "Signed Up Successfully",201
 
 @app.route("/api/login-user",methods=["POST"])
 def loginuser():
