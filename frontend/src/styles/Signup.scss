@@ -1,0 +1,177 @@
+@import "./variables";
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px $color-pink-transparent inset !important;
+  -webkit-box-shadow: 0 0 0 30px $color-pink-transparent inset !important;
+}
+
+.signup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  .signup-form-container {
+    width: 40rem;
+    background-color: $color-blue-transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 20px 0.5px;
+    .title {
+      font-family: $font-title;
+      font-size: 5rem;
+      text-align: center;
+      margin: 2rem;
+      margin-top: 1rem;
+    }
+    .signup-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1rem;
+      .form-group {
+        width: 25rem;
+        display: flex;
+        justify-content: space-between;
+      }
+      input {
+        width: 25rem;
+        height: 3rem;
+        border: 2px solid $color-pink;
+        border-radius: 10px;
+        background-color: $color-pink-transparent;
+        margin-bottom: 1rem;
+        text-align: center;
+        font-size: 1.5rem;
+        font-family: $font-secondary;
+        &:focus {
+          outline: none;
+        }
+        &.unmatched {
+          margin-bottom: 0;
+          border-color: $color-error;
+        }
+      }
+      input[type="text"] {
+        width: 12rem;
+        display: inline-block;
+        margin-bottom: 0;
+        &.available {
+          border-color: $color-success;
+        }
+        &.taken {
+          border-color: $color-error;
+        }
+      }
+      .name-group,
+      .username-group,
+      .password-group {
+        margin-bottom: 1rem;
+        .error {
+          font-family: $font-secondary;
+          display: none;
+          color: $color-error;
+          .icon {
+            margin-right: 0.5rem;
+          }
+          &.show {
+            display: flex;
+          }
+        }
+        .success {
+          font-family: $font-secondary;
+          display: none;
+          color: $color-success;
+          .icon {
+            margin-right: 0.5rem;
+          }
+          &.show {
+            display: flex;
+          }
+        }
+      }
+      button {
+        height: 3.5rem;
+        width: 12rem;
+        background-color: $color-pink;
+        font-size: 0px;
+        font-family: $font-secondary;
+        border: none;
+        border-radius: 10px;
+        transition: all 0.4s ease-in-out;
+        box-shadow: 1px 1px 5px 1px;
+        img {
+          height: 2.5rem;
+          transition: all 0.3s ease-in-out;
+          &.hide {
+            display: none;
+          }
+        }
+        &:hover {
+          img {
+            height: 1.4rem;
+            transform: rotate(-45deg);
+          }
+          font-size: 2rem;
+        }
+        &:focus {
+          box-shadow: 1px 1px 5px 1px inset;
+        }
+      }
+    }
+    p {
+      font-family: $font-primary;
+      font-size: 0.8rem;
+      a {
+        text-decoration: none;
+        color: $color-pink;
+        font-size: 1rem;
+      }
+    }
+    .option {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      hr {
+        width: 100%;
+        box-shadow: none;
+        border: transparent;
+        border-top: 1px solid $color-black;
+        display: inline-block;
+        margin-inline: 1rem;
+      }
+      span {
+        font-family: $font-primary;
+        font-size: 0.7rem;
+      }
+    }
+    .google-auth {
+      margin: 1.5rem;
+      width: 30rem;
+      height: 3rem;
+      border-radius: 500px;
+      border: none;
+      background-color: $color-white;
+      font-family: $font-secondary;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 1px 1px 5px 1px;
+      img {
+        height: 1.5rem;
+        margin-inline-end: 1rem;
+      }
+      &:focus {
+        box-shadow: 1px 1px 5px 1px inset;
+      }
+    }
+  }
+}
