@@ -10,10 +10,13 @@ import "./assets/fonts/Cartoonist/Cartoonist-regular.ttf";
 import "./assets/fonts/GosmickSans/GosmickSans.ttf";
 import "./assets/fonts/Inika/Inika-Regular.ttf";
 import "./assets/fonts/Komika/Komika.ttf";
+import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );
