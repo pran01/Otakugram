@@ -6,12 +6,12 @@
   z-index: -10;
   height: 100vh;
   width: 100%;
-  background-image: url("../assets/images/Sakura_Background.jpg");
+  background-image: url("../assets/images/Background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top left;
   background-attachment: fixed;
-  filter: blur(7px);
+  filter: blur(3px);
 }
 
 .login-container {
@@ -21,9 +21,8 @@
   height: 100vh;
   width: 100%;
   .login-form-container {
-    width: 40rem;
-    background-color: $color-blue;
-    border-radius: 30px;
+    width: 35rem;
+    background-color: $color-blue-transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,6 +33,7 @@
       text-align: center;
       margin: 2rem;
       margin-top: 1rem;
+      margin-bottom: 3rem;
     }
     .login-form {
       display: flex;
@@ -41,7 +41,7 @@
       align-items: center;
       margin-bottom: 2rem;
       input {
-        width: 30rem;
+        width: 25rem;
         height: 3rem;
         border: 2px solid $color-pink;
         border-radius: 10px;
@@ -55,8 +55,8 @@
         }
       }
       button {
-        height: 3.5rem;
-        width: 12rem;
+        height: 3.2rem;
+        width: 10rem;
         background-color: $color-pink;
         font-size: 0px;
         font-family: $font-secondary;
@@ -65,15 +65,15 @@
         transition: all 0.4s ease-in-out;
         box-shadow: 1px 1px 5px 1px;
         img {
-          height: 2.5rem;
+          height: 2rem;
           transition: all 0.3s ease-in-out;
         }
         &:hover {
           img {
-            height: 1.4rem;
+            height: 1.2rem;
             transform: rotate(-45deg);
           }
-          font-size: 2rem;
+          font-size: 1.5rem;
         }
         &:focus {
           box-shadow: 1px 1px 5px 1px inset;
@@ -82,11 +82,12 @@
     }
     p {
       font-family: $font-primary;
-      font-size: 1rem;
+      font-size: 0.8rem;
+      margin-bottom: 2rem;
       a {
         text-decoration: none;
         color: $color-pink;
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
     }
     .option {

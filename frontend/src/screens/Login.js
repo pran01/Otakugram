@@ -2,6 +2,7 @@ import "../styles/Login.scss";
 
 import lucyKey from "../assets/images/lucy-key.png";
 import googleLogo from "../assets/images/Google-logo.png";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -18,7 +19,7 @@ const Login = () => {
           </button>
         </form>
         <p>
-          New User? <a href="#">SIGN UP</a>
+          New User? <Link to="/signup">SIGN UP</Link>
         </p>
         <div className="option">
           <hr />
