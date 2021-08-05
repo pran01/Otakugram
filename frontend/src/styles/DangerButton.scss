@@ -1,0 +1,15 @@
+@import "./variables";
+.danger-button {
+  height: 4rem;
+  width: 80%;
+  background: $color-error;
+  color: $color-white;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 1px $color-black,
+    -1px -1px 5px 1px $color-black inset;
+  font-family: $font-secondary;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
