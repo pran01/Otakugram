@@ -1,11 +1,13 @@
+import React from "react";
 import "../styles/SignupModal.scss";
 
 import successGif from "../assets/images/anime_success.gif";
 import waitingGif from "../assets/images/sharingan_loading.gif";
 import errorGif from "../assets/images/anime_error.gif";
 import { FaArrowAltCircleRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 const SignupModal = ({ modalShow, setModalShow, signupMessage }) => {
+  const location = useLocation();
   return (
     <div
       className={
@@ -27,11 +29,18 @@ const SignupModal = ({ modalShow, setModalShow, signupMessage }) => {
         </div>
 
         <p>{signupMessage["message"]}</p>
-        {signupMessage["type"] === "success" && (
-          <Link className="goto-login-btn" type="button" to="/login">
-            Proceed to Login <FaArrowAltCircleRight className="icon" />
-          </Link>
-        )}
+        {signupMessage["type"] === "success" &&
+          (location.pathname === "/login" ? (
+            <Link className="goto-login-btn" type="button" to="/home">
+              Proceed to Home
+              <FaArrowAltCircleRight className="icon" />
+            </Link>
+          ) : (
+            <Link className="goto-login-btn" type="button" to="/login">
+              Proceed to Login
+              <FaArrowAltCircleRight className="icon" />
+            </Link>
+          ))}
       </div>
     </div>
   );

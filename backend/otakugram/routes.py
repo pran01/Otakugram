@@ -48,6 +48,7 @@ def loginuser():
 def logoutuser():
     if current_user.is_authenticated:
         logout_user()
+        print("User logged out.")
     return "User Logged Out.",200
 
 

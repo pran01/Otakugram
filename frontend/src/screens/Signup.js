@@ -1,8 +1,9 @@
+import React from "react";
 import "../styles/Signup.scss";
 
 import lucyKey from "../assets/images/lucy-key.png";
 import googleLogo from "../assets/images/Google-logo.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaExclamationCircle, FaCheckCircle } from "react-icons/fa";
 
 import SignupModal from "../components/SignupModal";
@@ -72,18 +73,16 @@ const Signup = () => {
             setTimeout(() => {
               setSignupMessage({ ...signupMessageTemp, type: "success" });
               signupMessageTemp = { ...signupMessageTemp, type: "success" };
-            }, 3000);
+            }, 3000); //calls this method after 3 sec, so that for 3secs it shows loading stage.
           } else if (response.status === 400) {
             setTimeout(() => {
               setSignupMessage({ ...signupMessageTemp, type: "error" });
               signupMessageTemp = { ...signupMessageTemp, type: "error" };
-            }, 3000);
+            }, 3000); //calls this method after 3 sec, so that for 3secs it shows loading stage.
           }
           return response.text();
         })
         .then((data) => {
-          // if (data[1] === 400) setSignupMessage([data[0], "error"]);
-          // else if (data[1] === 201) setSignupMessage([data[0], "success"]);
           setTimeout(() => {
             setSignupMessage({ ...signupMessageTemp, message: data });
             signupMessageTemp = { ...signupMessageTemp, message: data };
@@ -113,12 +112,15 @@ const Signup = () => {
       <div className="login-bg"></div>
 
       {/*Signup Modal*/}
+
       <SignupModal
         modalShow={modalShow}
         setModalShow={setModalShow}
         signupMessage={signupMessage}
       />
+
       {/* Signup Form */}
+
       <div className="signup-form-container">
         <p className="title">OTAKUGRAM</p>
         <form action="" className="signup-form">
